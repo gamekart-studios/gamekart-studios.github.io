@@ -97,10 +97,12 @@ section { padding: 48px 0; }
 
 .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 0 24px 24px; }
 .shots img { border-radius: 14px; box-shadow: 0 6px 16px rgba(110, 70, 160, 0.15); aspect-ratio: 16 / 9; object-fit: cover; }
+.shots.portrait img { aspect-ratio: 9 / 16; }
 
 .video { padding: 0 24px 24px; }
 .video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
-.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-frame.portrait { aspect-ratio: 9 / 16; max-width: 360px; margin: 0 auto; }
+.video-frame iframe, .video-frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; background: #f1e9ff; }
 
 /* About / contact */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
